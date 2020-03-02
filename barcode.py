@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import sys
+import json
 
 def barcode_reader():
     """Barcode code obtained from 'brechmos' 
@@ -62,12 +63,14 @@ def barcode_reader():
 
 def UPC_lookup(upc):
 
-    db= open("db.txt", "r")
-    lines = db.readlines()
-
-    for line in lines:
-        items = line.split("-=-")
-        print(items[2])
+    with open('db.json', "r+") as db:
+        books = json.load(db)
+        for book in books:
+            if(book['barcode'] == upc):
+                current_status = book['status']
+                print("Current status is " + current_status)
+            else:
+                print(False)
 
 
 if __name__ == '__main__':
