@@ -1,7 +1,3 @@
-#!/usr/bin/python
-import sys
-import json
-
 def barcode_reader():
     """Barcode code obtained from 'brechmos' 
     https://www.raspberrypi.org/forums/viewtopic.php?f=45&t=55100"""
@@ -33,7 +29,7 @@ def barcode_reader():
                 ##  we are done looking for characters
                 if int(ord(c)) == 40:
                     done = True
-                    break;
+                    break
                                     ##  If we are shifted then we have to
                 ##  use the hid2 characters.
                 if shift:
@@ -60,21 +56,3 @@ def barcode_reader():
                     else:
                         ss += hid[int(ord(c))]
     return ss
-
-def UPC_lookup(upc):
-
-    with open('db.json', "r+") as db:
-        books = json.load(db)
-        for book in books:
-            if(book['barcode'] == upc):
-                current_status = book['status']
-                print("Current status is " + current_status)
-            else:
-                print(False)
-
-
-if __name__ == '__main__':
-    try:
-        UPC_lookup("J41G78S1608A06JH")
-    except KeyboardInterrupt:
-        pass
