@@ -6,10 +6,16 @@ def UPC_lookup(upc):
         books = json.load(db)
         for book in books:
             if(book['barcode'] == upc):
-                current_status = book['status']
-                print("Current status is " + current_status)
+                #print current status
+                print("Current status is " + book['status'])
                 #change status
+                if(book['status'] == 'In'):
+                    book['status'] = 'Out'
+                else:
+                    book['status'] = 'In'
                 #print new status
+                print("New status: " + book['status'])
                 #save file
-            else:
-                print(False)
+                db.seek(0)
+                json.dump(books, db, indent=2)
+                db.truncate()
