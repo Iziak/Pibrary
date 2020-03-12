@@ -1,16 +1,16 @@
 [
-  {
-    "status": "In",
-    "title": "The Davinci Code",
-    "barcode": "J41G78S1608A06JH",
-    "publishDate": 2003,
-    "author": "Dan Brown"
-  },
-  {
-    "status": "In",
-    "title": "Angels and Demons",
-    "barcode": "J41G78S1608A06JW",
-    "publishDate": 2007,
-    "author": "Dan Brown"
-  }
+    {
+        "status": "In",
+        "title": "The Davinci Code",
+        "barcode": "J41G78S1608A06JH",
+        "publishDate": 2003,
+        "author": "Dan Brown"
+    },
+    {
+        "status": "In",
+        "title": "Angels and Demons",
+        "barcode": "J41G78S1608A06JW",
+        "publishDate": 2007,
+        "author": "Dan Brown"
+    }
 ]

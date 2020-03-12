@@ -17,5 +17,5 @@ def UPC_lookup(upc):
                 print("New status: " + book['status'])
                 #save file
                 db.seek(0)
-                json.dump(books, db, indent=2)
+                json.dump(books, db, indent=4)
                 db.truncate()
