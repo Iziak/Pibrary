@@ -4,6 +4,7 @@ def UPC_lookup(upc):
 
     with open('db.json', "r+") as db:
         books = json.load(db)
+        foundBook = False
         for book in books:
             if(book['barcode'] == upc):
                 #print current status
@@ -19,3 +20,8 @@ def UPC_lookup(upc):
                 db.seek(0)
                 json.dump(books, db, indent=4)
                 db.truncate()
+                foundBook = True
+                
+        if(foundBook == False):
+            
+            print("No match")
