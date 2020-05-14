@@ -1,11 +1,11 @@
 #!/usr/bin/python
 import sys
 from reader import barcode_reader
-from lookup import UPC_lookup
+from runMenu import Run_Menu
 
 
 if __name__ == '__main__':
     try:
-        UPC_lookup("J41G78S1608A06JH")
+        Run_Menu()
     except KeyboardInterrupt:
         pass

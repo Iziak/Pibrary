@@ -3,7 +3,8 @@
         "status": "In",
         "title": "The Davinci Code",
         "barcode": "J41G78S1608A06JH",
-        "publishDate": 2003,
+        "publishDate": "2004",
+        "genre": "mystery",
         "author": "Dan Brown"
     },
     {
